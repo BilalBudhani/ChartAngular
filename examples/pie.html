@@ -11,7 +11,7 @@ body {
     padding: 0;
     text-align: center;
 }
-#holder {
+#holder, #holder2 {
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     -webkit-box-shadow: 0 1px 3px #666;
@@ -30,11 +30,15 @@ p {
 <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/graphael/0.5.1/g.raphael-min.js"></script>
 <script src="../libs/g.pie.js"></script>
+<script src="../src/directives/chartangular.js"></script>
 <script src="../src/app.js"></script>
 </head>
-<body ng-app="ChartAngular">
+<body ng-app="MyApp">
 <div ng-controller="MyCtrl">
   <pie title="Pie Chart" id="holder" data-source="chart_data"></pie>
+  <button ng-click="addVal()">Add metric</button>
+  <button ng-click="addTimedVal()">Add metric using $timeout</button>
+
 </div>
 </body>
 </html>

@@ -7,13 +7,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/graphael/0.5.1/g.raphael-min.js"></script>
-<script src="../libs/g.pie.js"></script>
+<script src="../libs/g.bar.js"></script>
 <script src="../src/directives/chartangular.js"></script>
 <script src="../src/app.js"></script>
 </head>
 <body ng-app="MyChartApp">
-<div ng-controller="PieChartCtrl">
-  <piechart title="Pie Chart" id="holder" width="320" height="240" radius="150" data-source="chart_data" data-options="chart_options"></piechart>
+<div ng-controller="BarChartCtrl">
+  <barchart title="Single Series" id="holder" x="10" y="10" width="300" height="220" data-source="chart_data" data-options="chart_options"></barchart>
   <button ng-click="addVal()">Add metric</button>
   <button ng-click="addTimedVal()">Add metric using $timeout</button>
 

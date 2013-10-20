@@ -4,7 +4,8 @@ angular.module('ChartAngular', []).
   return {
     restrict: 'E',
     scope: {
-      source: '='
+      source: '=',
+      options: '='
     },
     replace: true,
     template: '<div></div>',
@@ -20,9 +21,9 @@ angular.module('ChartAngular', []).
       function createChart() {
         r = Raphael(attrs.id);
         if (attrs.title) {
-          r.text(320, 70, attrs.title).attr({font: "20px sans-serif"});
+          r.text(320, 70, attrs.title).attr(scope.options.title);
         }
-        r.piechart(320, 240, 150, source);
+        r.piechart(parseInt(attrs.width), parseInt(attrs.height), parseInt(attrs.radius), source, scope.options.chart);
       }
 
       function removeChart() {

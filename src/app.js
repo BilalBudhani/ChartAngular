@@ -4,7 +4,7 @@ angular.module('MyApp', ['ChartAngular']).
   $scope.chart_data = [55, 20, 13, 32, 5];
   $scope.chart_options = {
     title: {
-      font: "20px sans-serif"
+      font: "26px verdana"
     },
     chart: {
     }

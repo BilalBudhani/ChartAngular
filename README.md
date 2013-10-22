@@ -4,7 +4,8 @@ ChartAngular
 Charting in AngularJS made easy :)
 
 ### Live Previews
-Plnkr examples space
+* Pie Chart: http://plnkr.co/edit/SBc5zo?p=preview
+* Bar Chart: http://plnkr.co/edit/XvIJta?p=preview
 
 ### Dependencies 
 * Charts are built using [Raphael](http://raphaeljs.com) and [gRaphael](http://g.raphaeljs.com/).

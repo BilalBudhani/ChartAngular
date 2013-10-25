@@ -18,26 +18,32 @@ Charting in AngularJS made easy :)
 ```javascript
 angular.module('MyChartApp', ['ChartAngular'])
 ```
+* Now, drop the appropriate html tag in your views and see it in action
+
+Pie Chart:
+```html
+<piechart title="Pie Chart" id="holder" data-options="chart_options"></piechart>
+```
 
 * Options can be provided to charts via controller. 
 ```javascript
 $scope.chart_options = {
-    title: {
-      font: "26px verdana",
-      x: 320,
-      y: 70
-    },
-    chart: {
+  title: {
+    x: 320,
+    y: 70,
+    options: {
+      font: "26px verdana"
     }
+  },
+  chart: {
+    width: 320,
+    height: 240,
+    radius: 150,
+    source: [55, 20, 13, 32, 5],
+    options: {}
   };
 ```
 
-Now, just drop the appropriate html tag in your views and see it in action
-
-Pie Chart:
-```html
-<piechart title="Pie Chart" id="holder" width="320" height="240" radius="150" data-source="chart_data" data-options="chart_options"></piechart>
-```
 
 Bar Chart: 
 

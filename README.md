@@ -22,11 +22,13 @@ angular.module('MyChartApp', ['ChartAngular'])
 
 Pie Chart:
 ```html
+
 <piechart title="Pie Chart" id="holder" data-options="chart_options"></piechart>
 ```
 
 * Options can be provided to charts via controller. 
 ```javascript
+
 $scope.chart_options = {
   title: {
     x: 320,
@@ -49,11 +51,13 @@ OR
 Bar Chart: 
 
 ```html
+
  <barchart title="Single Series" id="holder" data-options="chart_options"></barchart>
 ```
 
 * Options
 ```javascript
+
 $scope.chart_options = {
     title: {
       x: 160,
@@ -71,6 +75,7 @@ $scope.chart_options = {
       options: {}
     }
   };
+
 ```
 
 ### Features

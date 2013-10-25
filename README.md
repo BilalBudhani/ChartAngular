@@ -41,14 +41,36 @@ $scope.chart_options = {
     radius: 150,
     source: [55, 20, 13, 32, 5],
     options: {}
-  };
+  }
+};
 ```
-
+OR 
 
 Bar Chart: 
 
 ```html
- <barchart title="Single Series" id="holder" x="10" y="10" width="300" height="220" data-source="chart_data" data-options="chart_options"></barchart>
+ <barchart title="Single Series" id="holder" data-options="chart_options"></barchart>
+```
+
+* Options
+```javascript
+$scope.chart_options = {
+    title: {
+      x: 160,
+      y: 10,
+      options: {
+        font: "12px sans-serif"
+      }
+    },
+    chart: {
+      x: 10,
+      y: 10,
+      width: 300,
+      height: 220,
+      source: [[55, 20, 13, 32, 5, 1, 2, 10]],
+      options: {}
+    }
+  };
 ```
 
 ### Features

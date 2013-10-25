@@ -20,15 +20,13 @@ angular.module('MyChartApp', ['ChartAngular'])
 ```
 * Now, drop the appropriate html tag in your views and see it in action
 
-Pie Chart:
 ```html
-
 <piechart title="Pie Chart" id="holder" data-options="chart_options"></piechart>
 ```
 
 * Options can be provided to charts via controller. 
-```javascript
 
+```javascript
 $scope.chart_options = {
   title: {
     x: 320,
@@ -46,18 +44,15 @@ $scope.chart_options = {
   }
 };
 ```
-OR 
-
-Bar Chart: 
+* OR 
 
 ```html
-
  <barchart title="Single Series" id="holder" data-options="chart_options"></barchart>
 ```
 
 * Options
-```javascript
 
+```javascript
 $scope.chart_options = {
     title: {
       x: 160,
@@ -75,7 +70,6 @@ $scope.chart_options = {
       options: {}
     }
   };
-
 ```
 
 ### Features

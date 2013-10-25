@@ -18,17 +18,19 @@ angular.module('ChartAngular', []).
       scope.options = default_options;
     }
 
+    var chart_opts = scope.options.chart;
+    var title_opts = scope.options.title;
     var r = Raphael(attrs.id);
-    source = angular.copy(scope.source); // Prevents from getting changed by raphael
-    if (attrs.title) {
-      r.text(scope.options.title.x, scope.options.title.y, attrs.title).attr(scope.options.title);
-    }
+
+    source = angular.copy(chart_opts.source); // Prevents from getting changed by raphael
+    r.text(title_opts.x, title_opts.y, attrs.title).attr(title_opts.options);
+
     r.piechart(
-      parseInt(attrs.width), 
-      parseInt(attrs.height), 
-      parseInt(attrs.radius), 
+      parseInt(chart_opts.width), 
+      parseInt(chart_opts.height), 
+      parseInt(chart_opts.radius), 
       source, 
-      scope.options.chart);
+      chart_opts.options);
     
     return r;
   }
@@ -36,7 +38,6 @@ angular.module('ChartAngular', []).
   return {
     restrict: 'E',
     scope: {
-      source: '=',
       options: '='
     },
     replace: true,
@@ -44,7 +45,7 @@ angular.module('ChartAngular', []).
     link: function link(scope, element, attrs) {
       var chart = createChart(scope, attrs);
 
-      scope.$watch('source', function(new_source, old_source) {
+      scope.$watch('options.chart.source', function(new_source, old_source) {
         if (new_source === old_source) return ; // do nothing when the source is same
         removeChart(chart);
         createChart(scope, attrs);
@@ -72,25 +73,26 @@ directive('barchart', function($log, $window){
       scope.options = default_options;
     }
 
+    var chart_opts = scope.options.chart;
+    var title_opts = scope.options.title;
     var r = Raphael(attrs.id);
-    source = angular.copy(scope.source); // Prevents from getting changed by raphael
-    if (attrs.title) {
-      r.text(scope.options.title.x, scope.options.title.y, attrs.title).attr(scope.options.title);
-    }
+
+    source = angular.copy(chart_opts.source); // Prevents from getting changed by raphael
+    r.text(title_opts.x, title_opts.y, attrs.title).attr(title_opts.options);
+
     r.barchart(
-      parseInt(attrs.x), 
-      parseInt(attrs.y), 
-      parseInt(attrs.width),
-      parseInt(attrs.height), 
+      parseInt(chart_opts.x), 
+      parseInt(chart_opts.y), 
+      parseInt(chart_opts.width),
+      parseInt(chart_opts.height), 
       source, 
-      scope.options.chart);
+      chart_opts.options);
     
     return r;
   }
     return {
     restrict: 'E',
     scope: {
-      source: '=',
       options: '='
     }, 
     template: '<div></div>',
@@ -98,7 +100,7 @@ directive('barchart', function($log, $window){
     link: function(scope, element, attrs) {
      var chart = createChart(scope, attrs);
 
-      scope.$watch('source', function(new_source, old_source) {
+      scope.$watch('options.chart.source', function(new_source, old_source) {
         if (new_source === old_source) return ; // do nothing when the source is same
         removeChart(chart);
         createChart(scope, attrs);

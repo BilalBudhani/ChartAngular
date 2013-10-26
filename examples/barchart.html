@@ -13,7 +13,7 @@
 </head>
 <body ng-app="MyChartApp">
 <div ng-controller="BarChartCtrl">
-  <barchart title="Single Series" id="holder" x="10" y="10" width="300" height="220" data-source="chart_data" data-options="chart_options"></barchart>
+  <barchart title="Single Series" id="holder" data-options="chart_options"></barchart>
   <button ng-click="addVal()">Add metric</button>
   <button ng-click="addTimedVal()">Add metric using $timeout</button>
 

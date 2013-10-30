@@ -3,78 +3,82 @@ ChartAngular
 
 Charting in AngularJS made easy :)
 
-### Live Previews
-* Pie Chart: http://plnkr.co/edit/SBc5zo?p=preview
-* Bar Chart: http://plnkr.co/edit/XvIJta?p=preview
-
 ### Dependencies 
-* Charts are built using [Raphael](http://raphaeljs.com) and [gRaphael](http://g.raphaeljs.com/).
-* Add [PieChart](http://github.com/DmitryBaranovskiy/g.raphael/blob/master/min/g.pie-min.js?raw=true) or [BarChart](http://github.com/DmitryBaranovskiy/g.raphael/blob/master/min/g.bar-min.js?raw=true) or both based on what your usage.
+* Charts are built using [Raphael](http://raphaeljs.com) and [Morris](http://www.oesmith.co.uk/morris.js/).
 
 ### How to use
 
 * Drop the chartangular library in your project's javascripts.
-* Add the dependency 
-```javascript
-angular.module('MyChartApp', ['ChartAngular'])
-```
+* Add the dependency ` angular.module('MyChartApp', ['ChartAngular']) `
 * Now, drop the appropriate html tag in your views and see it in action
-
-```html
-<piechart title="Pie Chart" id="holder" data-options="chart_options"></piechart>
-```
-
 * Options can be provided to charts via controller. 
 
-```javascript
-$scope.chart_options = {
-  title: {
-    x: 320,
-    y: 70,
-    options: {
-      font: "26px verdana"
-    }
-  },
-  chart: {
-    width: 320,
-    height: 240,
-    radius: 150,
-    source: [55, 20, 13, 32, 5],
-    options: {}
-  }
-};
+### Bar Chart
+```html
+  <barchart id="bar-example" data-options="chart_options"></barchart>
 ```
-* OR 
+* Options in controller 
+
+```javascript
+  $scope.chart_options = {
+    data: [
+      { y: '2006', a: 100, b: 90 },
+      { y: '2007', a: 75,  b: 65 },
+      { y: '2008', a: 50,  b: 40 },
+      { y: '2009', a: 75,  b: 65 },
+      { y: '2010', a: 50,  b: 40 },
+      { y: '2011', a: 75,  b: 65 },
+      { y: '2012', a: 100, b: 90 }
+    ],
+    xkey: 'y',
+    ykeys: ['a', 'b'],
+    labels: ['Series A', 'Series B']
+  };
+```
+### Donut Chart 
 
 ```html
- <barchart title="Single Series" id="holder" data-options="chart_options"></barchart>
+  <donutchart id="donut-example" data-options="chart_options"></donutchart>
 ```
 
-* Options
+* Options in controller 
 
 ```javascript
-$scope.chart_options = {
-    title: {
-      x: 160,
-      y: 10,
-      options: {
-        font: "12px sans-serif"
-      }
-    },
-    chart: {
-      x: 10,
-      y: 10,
-      width: 300,
-      height: 220,
-      source: [[55, 20, 13, 32, 5, 1, 2, 10]],
-      options: {}
-    }
+  $scope.chart_options = {
+    data: [
+      {label: "Download Sales", value: 12},
+      {label: "In-Store Sales", value: 30},
+      {label: "Mail-Order Sales", value: 20}
+    ]
   };
 ```
 
+### Line Chart 
+```html
+  <linechart id="line-example" data-options="chart_options"></linechart>
+```
+* Options in controller 
+
+```javascript
+ $scope.chart_options = {
+    data: [
+      { y: '2006', a: 100, b: 90 },
+      { y: '2007', a: 75,  b: 65 },
+      { y: '2008', a: 50,  b: 40 },
+      { y: '2009', a: 75,  b: 65 },
+      { y: '2010', a: 50,  b: 40 },
+      { y: '2011', a: 75,  b: 65 },
+      { y: '2012', a: 100, b: 90 }
+    ],
+    xkey: 'y',
+    ykeys: ['a', 'b'],
+    labels: ['Series A', 'Series B']  
+  };
+```
 ### Features
-* Two way bindings on chart data source.
+* Simple directives for charts   
 
 ### Todo/Roadmap
-* Add line and dot charts.
+* Two way bindings on chart data source.
+ 
 

@@ -15,7 +15,9 @@ angular.module('ChartAngular', []).
     replace: true,
     template: '<div></div>',
     link: function link(scope, element, attrs) {
-      return createChart(attrs.id, scope.options);
+      scope.$watch("options" , function(n,o){
+		return createChart(attrs.id, scope.options)
+      })
     }
   };
 }).
@@ -35,7 +37,9 @@ angular.module('ChartAngular', []).
       replace: true,
       template: '<div></div>',
       link: function(scope, element, attrs) {
-        return createChart(attrs.id, scope.options)
+        scope.$watch("options" , function(n,o){
+		  return createChart(attrs.id, scope.options)
+        })
       }
     }
 
@@ -56,7 +60,9 @@ angular.module('ChartAngular', []).
       replace: true,
       template: '<div></div>',
       link: function(scope, element, attrs) {
-        return createChart(attrs.id, scope.options)
+        scope.$watch("options" , function(n,o){
+		  return createChart(attrs.id, scope.options)
+	    })
       }
     }
 
@@ -77,7 +83,9 @@ angular.module('ChartAngular', []).
       replace: true,
       template: '<div></div>',
       link: function(scope, element, attrs) {
-        return createChart(attrs.id, scope.options)
+        scope.$watch("options" , function(n,o){
+		  return createChart(attrs.id, scope.options)
+        })
       }
     }
 

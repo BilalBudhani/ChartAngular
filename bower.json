@@ -3,8 +3,8 @@
   "version": "1.0",
   "main": "./src/directives/chartangular.js",
   "dependencies": {
-    "angular": "1.2.15",
-	"raphael":"2.1.2",
-	"morris.js":"0.5.0"
+    "angular": "~1.4.5",
+    "raphael":"2.1.2",
+    "morris.js":"0.5.0"
   }
 }
